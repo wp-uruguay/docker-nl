@@ -1,0 +1,39 @@
+# Node
+node_modules/
+.npm/
+
+# Build output
+.next/
+out/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Others
+coverage/
+*.local
+*.sublime*
+
+# TypeScript
+*.tsbuildinfo
+
+# Misc
+.eslintcache
+
+# Docker
+.docker/
