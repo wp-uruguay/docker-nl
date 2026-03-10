@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+/* Altura full SIEMPRE */
+html,
+body {
+  height: 100%;
+  min-height: 100dvh;
+}
+
+:root {
+  color-scheme: light;
+  --sidebar-w: 300px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body), ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: #ffffff;
+  color: #0a0a0a;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), var(--font-body), ui-sans-serif, system-ui;
+  letter-spacing: -0.02em;
+}
+
+/* Main: ocupa todo el viewport y deja espacio para sidebar en desktop */
+.nl-main {
+  height: 100dvh;
+  width: 100%;
+  padding-left: calc(var(--sidebar-w) + 24px); /* 12px left + sidebar + 12px gap */
+  overflow: hidden; /* importante: iframe full sin scroll externo */
+}
+
+@media (max-width: 767px) {
+  .nl-main {
+    padding-left: 0;
+  }
+}
+
+iframe {
+  display: block;
+}
+
+.nl-dots-card {
+  background-color: #f8fafc;
+  background-image:
+    radial-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px),
+    radial-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+  background-size: 18px 18px, 26px 26px;
+  background-position: 0 0, 9px 9px;
+  animation: nl-dots-drift 14s linear infinite;
+}
+
+@keyframes nl-dots-drift {
+  0% {
+    background-position: 0 0, 9px 9px;
+  }
+  100% {
+    background-position: 180px 180px, 140px 140px;
+  }
+}
+
+/* Login blobs */
+.nl-blob-wave {
+  animation: nl-blob-wave 18s ease-in-out infinite;
+  transform-origin: 60% 40%;
+}
+
+@keyframes nl-blob-wave {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  35% {
+    transform: translate3d(-18px, 12px, 0) scale(1.03);
+  }
+  70% {
+    transform: translate3d(14px, -10px, 0) scale(0.98);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
